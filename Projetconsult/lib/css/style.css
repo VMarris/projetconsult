@@ -1,0 +1,19 @@
+.green{
+    color: green;
+}
+.txtRouge {
+    color:#900;
+}
+.txtGras {
+    font-weight : bold;
+}
+
+.footer {
+    clear:both; 
+    color:#333;
+    width:80%;
+    margin:0 auto; 
+    text-align:center;
+    padding-right:15px;
+    padding-top:1%;
+}
