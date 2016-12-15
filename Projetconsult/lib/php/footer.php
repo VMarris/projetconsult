@@ -1,4 +1,5 @@
 <div class="centrer clear"> 
-    Editeur responsable webmaster@Condhosto.be
+    <img alt="logo" src="admin/images/logo.png" class="logo hidden-xs"/>
+    Editeur responsable webmaster@condhosto.be
 </div>  
 

@@ -1,9 +1,9 @@
 <?php
 /* auto chargement pour toutes les classes dans admin*/
 function autoload($nom_classe) {
-    if(file_exists('./lib/php/classes/'.$nom_classe.'.class.php')) {
+    if(file_exists('admin/lib/php/classes/'.$nom_classe.'.class.php')) {
         
-        require './lib/php/classes/'.$nom_classe.'.class.php';
+        require 'admin/lib/php/classes/'.$nom_classe.'.class.php';
     }
     else print "aucun";
     
