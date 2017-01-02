@@ -6,18 +6,29 @@
 if (isset($_GET['commander'])) {
     extract($_GET, EXTR_OVERWRITE);
 
-    if (empty($email1) || empty($email2) || empty($nom) || empty($prenom) || empty($telephone) || empty($mdp1) || empty($mdp2)) {
+    if (empty($email1) || empty($email2) || empty($nom) || empty($prenom) || empty($mdp1) || empty($mdp2)) {
         $erreur = "<span class='txtGras txtRouge'>Veuillez renseigner tous les champs</span>";
     } else {
+        $test=true;
         //vérific champ téléphone
-        if (preg_match("#[0-9]{3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}#", $telephone) == true) {
-            print "ok";
-        } else
-            print "non";
+        if(!empty($telephone and preg_match("#[0-9]{3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}#", $telephone) == false)){
+            $erreur = $erreur."Entrez un numero de téléphone valide<br/>";
+            $test=false;
+        }
+        if($email1 != $email2){
+            $erreur = $erreur."Entrez deux e-mails identiques<br/>";
+            $test=false;
+        }
+        if($mdp1 != $mdp2){
+            $erreur = $erreur."Entrez deux mot de passe identiques<br/>";
+            $test=false;
+        }
+        
+        if($test){
+            $log = new CompteDB($cnx);
+            $retour = $log->isAuthorized($_POST['email'], $_POST['mdp']);
+        }
 
-        //appel procédure
-
-        print "ok";
     }
 }
 ?>
