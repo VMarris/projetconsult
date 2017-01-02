@@ -3,49 +3,55 @@
 </div>
 <?php
 //traitement php formulaire
-if (isset($_GET['commander'])) {
-    extract($_GET, EXTR_OVERWRITE);
+$erreur="";
+if (isset($_POST['commander'])) {
+    extract($_POST, EXTR_OVERWRITE);
 
     if (empty($email1) || empty($email2) || empty($nom) || empty($prenom) || empty($mdp1) || empty($mdp2)) {
-        $erreur = "<span class='txtGras txtRouge'>Veuillez renseigner tous les champs</span>";
+        $erreur = "- Veuillez renseigner tous les champs";
     } else {
         $test=true;
         //vérific champ téléphone
-        if(!empty($telephone and preg_match("#[0-9]{3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}#", $telephone) == false)){
-            $erreur = $erreur."Entrez un numero de téléphone valide<br/>";
+        if(!empty($telephone) and preg_match("#[0-9]{3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}#", $telephone) == false){
+            $erreur = $erreur."- Entrez un numero de téléphone valide<br/>";
             $test=false;
         }
         if($email1 != $email2){
-            $erreur = $erreur."Entrez deux e-mails identiques<br/>";
+            $erreur = $erreur."- Entrez deux e-mails identiques<br/>";
             $test=false;
         }
         if($mdp1 != $mdp2){
-            $erreur = $erreur."Entrez deux mot de passe identiques<br/>";
+            $erreur = $erreur."- Entrez deux mot de passe identiques<br/>";
             $test=false;
         }
         
         if($test){
             $log = new CompteDB($cnx);
-            $retour = $log->isAuthorized($_POST['email'], $_POST['mdp']);
+            $retour = $log->exist($email1);
+            if($retour=="0"){
+                
+            }else{
+                $erreur = $erreur."- Email déjà utilisé<br/>";
+            }
         }
 
     }
 }
 ?>
-
     <div id="div_form_inscript">
         Veuillez entrer vos coordonnées : <br/><br/>
 
         <div class="container ">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-4 txtGras txtRouge" id="diverins"> 
                 <?php
-                if (isset($erreur))
-                    print $erreur;
+                if (!empty($erreur))
+                    print "<span>".$erreur."</span>";
                 ?>
                 </div>
+                <br/>
             </div>
-            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_commande">
+            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_inscription">
 
                 <div class="row">
                     <div class="col-sm-2"><label for="email1">Email</label></div>
@@ -55,7 +61,7 @@ if (isset($_GET['commander'])) {
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-2"><label for="email2">Confirmez votre email</label></div>
+                    <div class="col-sm-2"><label for="email2" >Confirmez votre email</label></div>
                     <div class="col-sm-4">
                         <input type="email" id="email2" name="email2" placeholder="aaa@aaa.aa"/>
                     </div>
@@ -97,7 +103,7 @@ if (isset($_GET['commander'])) {
                         <input type="reset" id="reset" value="Annuler" />
                     </div>
                     <div class="col-sm-4 unpeuplace">
-                        <input type="submit" name="commander" id="commander" value="Finaliser mon inscription" />&nbsp;           
+                        <input type="submit" name="commander" id="inscrire" value="Finaliser mon inscription" />         
                     </div>
                 </div>
             </form>
