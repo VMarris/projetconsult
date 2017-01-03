@@ -10,12 +10,12 @@ session_start();
         <title>Hopital Condorcet</title>
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/bootstrap-3.3.7/dist/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/style.css"/> 
-        <script src="admin/lib/css/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
         <script src="admin/lib/js/jquery-3.1.1.js"></script>
         <script src="admin/lib/js/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript"></script>
         <script src="admin/lib/js/messagesJqueryVal.js" type="text/javascript"></script>
+        <script src="admin/lib/css/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
         <script src="admin/lib/js/functionsJqueryVal.js" type="text/javascript"></script>
-        <<script src="admin/lib/js/functionJqueryValEmail.js"></script>
+        <script src="admin/lib/js/functionJqueryValEmail.js"></script>
         <meta charset="UTF-8">
     </head>
     <body>

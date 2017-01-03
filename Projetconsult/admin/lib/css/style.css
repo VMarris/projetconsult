@@ -115,6 +115,11 @@
     
 }
 
+#gt_carousel{
+    max-width: 700px;
+    margin : auto;
+}
+
 /* les fixes */
 header {
     margin:auto 0;
