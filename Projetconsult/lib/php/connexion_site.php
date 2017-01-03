@@ -1,12 +1,14 @@
 <?php
 if (isset($_GET['depart'])) {
     $_SESSION['connexion'] = NULL; //Deconnexion
+    $_SESSION['email'] = NULL;
 }
 if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset($_POST['mdp']) != NULL) {
     $log = new CompteDB($cnx);
     $retour = $log->isAuthorized($_POST['email'], $_POST['mdp']);
     if ($retour > 0) {
         $_SESSION['connexion'] = $retour;
+        $_SESSION['email'] = $_POST['email'];
     } else {
         print '<span class="txtRouge">Identifiant incorrect</span>';
     }

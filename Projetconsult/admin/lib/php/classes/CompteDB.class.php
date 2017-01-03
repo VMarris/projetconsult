@@ -51,5 +51,32 @@ class CompteDB extends Compte {
         }
         return $retour;
     }
+    
+    public function getCompte($email) {
+        try {
+            $query = "select * from vue_client where mail=:email";
+            $resultset = $this->_db->prepare($query); 
+            $resultset->bindValue(':email', $email);
+            $resultset->execute();
+            $data = $resultset->fetchAll(); 
+            
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = new Compte($data);
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+
+    public function __toString() {
+        return $this->_variable." ".$this->_db;
+    }
 
 }

@@ -6,7 +6,7 @@ class JsonCompteDB {
         $this->_db = $db;
     }
     
-    public function getCompte($email){
+    public function getNbCompte($email){
         $query="select count(*) as conte from comptes where mail=:email";
         try {
         $resultset = $this->_db->prepare($query);

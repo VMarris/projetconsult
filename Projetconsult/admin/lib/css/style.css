@@ -108,7 +108,11 @@
     width: 500px;
     margin: auto;
 }
-
+#div_form_change_compte{
+    text-align: left;
+    width: 500px;
+    margin: auto;
+}
 #div_aff_service{
     max-width: 1000px;
     margin: auto;

@@ -44,7 +44,7 @@ if (isset($_POST['commander'])) {
     ?>
 </div>
 <br/>
-<div id="div_form_inscript">
+<div id="div_form_inscript" class="textnorm">
     Veuillez entrer vos coordonnées : <br/><br/>
 
     <div class="container ">
