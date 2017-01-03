@@ -37,12 +37,13 @@ if (isset($_POST['commander'])) {
 }
 ?>
 <div class="centrer">
-    <h2 class="textnorm dblue">Inscription</h2>
+    <h2 class="souligne dblue">Inscription</h2>
     <?php
     if (!empty($erreur))
         print "<h2 class='green'>" . $okay . "</h2>";
     ?>
 </div>
+<br/>
 <div id="div_form_inscript">
     Veuillez entrer vos coordonnées : <br/><br/>
 

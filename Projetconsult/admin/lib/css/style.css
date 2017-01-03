@@ -1,8 +1,8 @@
 .imgauche{
-	float:left;
-	margin-bottom:5px;
-	margin-right:10px;
-        width: auto;
+    float:left;
+    margin-bottom:5px;
+    margin-right:10px;
+    width: auto;
 }
 
 .lab_conex{
@@ -76,16 +76,16 @@
 }
 /* les id */
 #connexion{
-	text-align:right;
-	padding-top:5px;
-        padding-bottom: 2px;
+    text-align:right;
+    padding-top:5px;
+    padding-bottom: 2px;
 
 }
 
 #conteneur{
-	max-width : 1200px;
-	margin: auto;
-	background-color:white;
+    max-width : 1200px;
+    margin: auto;
+    background-color:white;
 }
 
 #email_conex{
@@ -93,9 +93,9 @@
 }
 
 #googlemap{
-	width:400px;
-	height:300px;
-	border:0px;
+    width:400px;
+    height:300px;
+    border:0px;
 }
 
 #plan_acces{
@@ -107,6 +107,12 @@
     text-align: left;
     width: 500px;
     margin: auto;
+}
+
+#div_aff_service{
+    max-width: 1000px;
+    margin: auto;
+    
 }
 
 /* les fixes */
