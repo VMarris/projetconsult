@@ -2,7 +2,7 @@
 <?php
 //traitement php formulaire
 $erreur = "";
-if (isset($_POST['commander'])) {
+if (isset($_POST['inscrire'])) {
     extract($_POST, EXTR_OVERWRITE);
 
     if (empty($email1) || empty($email2) || empty($nom) || empty($prenom) || empty($mdp1) || empty($mdp2)) {
@@ -39,7 +39,7 @@ if (isset($_POST['commander'])) {
 <div class="centrer">
     <h2 class="souligne dblue">Inscription</h2>
     <?php
-    if (!empty($erreur))
+    if (isset($okay))
         print "<h2 class='green'>" . $okay . "</h2>";
     ?>
 </div>
@@ -109,7 +109,7 @@ if (isset($_POST['commander'])) {
                     <input type="reset" id="reset" value="Annuler" />
                 </div>
                 <div class="col-sm-4 unpeuplace">
-                    <input type="submit" name="commander" id="inscrire" value="Finaliser mon inscription" />         
+                    <input type="submit" name="inscrire" id="inscrire" value="Finaliser mon inscription" />         
                 </div>
             </div>
         </form>

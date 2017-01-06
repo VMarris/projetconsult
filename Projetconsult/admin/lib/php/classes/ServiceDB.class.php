@@ -14,9 +14,6 @@ class ServiceDB {
             $query = "SELECT * FROM service";
             $resultset = $this->_db->prepare($query);           
             $resultset->execute();
-            $data = $resultset->fetchAll(); 
-            
-            $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();
         }
