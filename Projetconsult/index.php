@@ -30,7 +30,9 @@ session_start();
                     ?>
                 </div>
                 <div class="container centrer">
-                    <img src="admin/images/banniere.png" alt="Bannière" title="Banhost" class="imga"/>
+                    <a href="index.php?page=accueil">
+                        <img src="admin/images/banniere.png" alt="Bannière" title="Banhost" class="imga"/>
+                    </a>
                 </div>
             </header>
             <div class="container">

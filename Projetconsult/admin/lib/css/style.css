@@ -43,7 +43,9 @@
 .souligne{
     text-decoration:underline;
 }
-
+.nonGras{
+    font-weight: normal;
+}
 .footer {
     clear:both; 
     color:#333;
@@ -73,6 +75,10 @@
 
 .unpeuplace{
     margin-top: 20px;
+}
+.unpeuplacecote{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 /* les id */
 #connexion{
@@ -115,8 +121,12 @@
 }
 #div_aff_service{
     max-width: 1000px;
+    margin: auto; 
+}
+#div_aff_docteur{
+    max-width: 500px;
     margin: auto;
-    
+    padding: 0px;
 }
 
 #gt_carousel{

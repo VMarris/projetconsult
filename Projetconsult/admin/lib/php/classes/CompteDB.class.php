@@ -69,7 +69,11 @@ class CompteDB extends Compte {
                 print $e->getMessage();
             }
         }
-        return $_infoArray;
+        if(isset($_infoArray)){
+            return $_infoArray;
+        }else{
+            return null;
+        }
     }
     
     public function updatemdp($id_compte,$mdp){
