@@ -12,16 +12,14 @@ if (isset($_POST['service_id'])) {
     $serv = $_POST['service_id'];
 }
 
-    $tdoc = new DocteurDB($cnx);
-    $docteurs = $tdoc->getDocteur($serv);
-    $tserv = new ServiceDB($cnx);
-    $services = $tserv->getServiceid($serv);
-if($docteurs==null || $services==null){
+$tdoc = new DocteurDB($cnx);
+$docteurs = $tdoc->getDocteur($serv);
+$tserv = new ServiceDB($cnx);
+$services = $tserv->getServiceid($serv);
+if ($docteurs == null || $services == null) {
     echo '<span class="txtRouge txtGras">Service non reconnus</span><br/>';
     exit();
 }
-    
-
 ?>
 <div class="centrer">
     <h2 class="dblue">Prise de rendez-vous</h2>
@@ -85,14 +83,14 @@ if (isset($_POST['valrdv'])) {
                         <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs "></div>
                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-112 divspe">
                             <input type="radio" name="docteur" class="radspe" value="<?php echo $docteurs[0]->__get('id_docteur'); ?>" id="<?php
-            echo utf8_encode($docteurs[0]->__get('nom'));
-            echo $docteurs[0]->__get('id_docteur');
-                ?>" checked="checked"/>
+                            echo utf8_encode($docteurs[0]->__get('nom'));
+                            echo $docteurs[0]->__get('id_docteur');
+                            ?>" checked="checked"/>
 
                             <label for="<?php
-                echo utf8_encode($docteurs[0]->__get('nom'));
-                echo $docteurs[0]->__get('id_docteur');
-                ?>" class="labspe">
+                            echo utf8_encode($docteurs[0]->__get('nom'));
+                            echo $docteurs[0]->__get('id_docteur');
+                            ?>" class="labspe">
                                 <div class="check"></div>
                                 <span class="txtGras">
                                     <?php echo utf8_encode($docteurs[0]->__get('nom')); ?>
@@ -103,20 +101,20 @@ if (isset($_POST['valrdv'])) {
                             </label>
                         </div>
                     </div><?php
-                                    for ($i = 1; $i < sizeof($docteurs); $i++) {
-                                        ?>
+                    for ($i = 1; $i < sizeof($docteurs); $i++) {
+                        ?>
                         <div class="row ">
                             <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs "></div>
                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-112 divspe">
                                 <input type="radio" name="docteur" class="radspe" value="<?php echo $docteurs[$i]->__get('id_docteur'); ?>" id="<?php
-                echo utf8_encode($docteurs[$i]->__get('nom'));
-                echo $docteurs[$i]->__get('id_docteur');
-                                        ?>"/>
+                                echo utf8_encode($docteurs[$i]->__get('nom'));
+                                echo $docteurs[$i]->__get('id_docteur');
+                                ?>"/>
 
                                 <label for="<?php
-                echo utf8_encode($docteurs[$i]->__get('nom'));
-                echo $docteurs[$i]->__get('id_docteur');
-                                        ?>" class="labspe">
+                                echo utf8_encode($docteurs[$i]->__get('nom'));
+                                echo $docteurs[$i]->__get('id_docteur');
+                                ?>" class="labspe">
                                     <div class="check"></div>
                                     <span class="txtGras">
                                         <?php echo utf8_encode($docteurs[$i]->__get('nom')); ?>

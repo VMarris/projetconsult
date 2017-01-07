@@ -23,4 +23,26 @@ class ConsultationDB {
         }
     }
 
+    function delConsul($idconsul, $email) {
+        try {
+            $querry = "select count(*) from consultation where :idconsul=id_consultation and id_client=(select id_client from client where id_compte=(select id_compte from comptes where mail=:email))";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(':idconsul', $idconsul);
+            $sql->bindValue(':email', $email);
+            $sql->execute();
+            $retour = $sql->fetchColumn(0);
+            if ($retour == "0") {
+                return false;
+            } else {
+                $querry = "delete from consultation where id_consultation=:idconsul";
+                $sql = $this->_db->prepare($querry);
+                $sql->bindValue(':idconsul', $idconsul);
+                $sql->execute();
+                return true;
+            }
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
+
 }

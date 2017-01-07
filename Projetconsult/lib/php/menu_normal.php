@@ -6,6 +6,7 @@
 if (isset($_SESSION['connexion'])) {
     ?>
     <a href="index.php?page=moncompte"><button name="Compte" class="btn btn_menu" >Gestion du compte</button></a>
+    <a href="index.php?page=gestionrdv"><button name="GeRdv" class="btn btn_menu" >Gestion des rendez-vous</button></a>
     <?php
 } 
 
