@@ -20,7 +20,7 @@ class Vue_ConsultationDB {
 
         while ($data = $resultset->fetch()) {
             try {
-                $_infoArray[] = new Compte($data);
+                $_infoArray[] = new Vue_Consultation($data);
             } catch (PDOException $e) {
                 print $e->getMessage();
             }

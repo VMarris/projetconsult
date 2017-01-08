@@ -3,7 +3,7 @@
 <br/><br/>
 <span class="textnorm">L'hopital et le secrétariat est accessible tous les jours de 7h à 19h. <br/>
 Les urgences sont accessibles à toute heures, sur le côté de l'établissement.<br/><br/>
-Les rendez-vous ne s'effectuent que de 9h à 12h au matin et 13h à 18h30 l'après midi. <br/>
+Les rendez-vous ne s'effectuent que de 9h à 12h au matin et 13h à 18h30 l'après midi sauf le dimanche. <br/>
 En cas de problème avec votre rendez-vous, le secréatriat vous contactera par mail ou par téléphone. <br/><br/>
 Vous pouvez contacter l'hopital au numéro suivant : 065/22.61.32
 </span>

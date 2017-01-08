@@ -10,9 +10,25 @@ if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset(
         $_SESSION['connexion'] = $retour;
         $_SESSION['email'] = $_POST['email'];
     } else {
+        if (!isset($_COOKIE['connexion'])) {
+            setcookie("connexion", "1", time() + 900);
+        }else{
+            if($_COOKIE['connexion']=="1"){
+                setcookie("connexion", "2");
+            }else{
+                setcookie("connexion", "3");
+            }
+        }
         print '<span class="txtRouge">Identifiant incorrect</span>';
     }
 }
+$tcook=true;
+if(isset($_COOKIE['connexion'])){
+    if($_COOKIE['connexion']=="3"){
+        $tcook=false;
+    }
+}
+if($tcook){
 //si on est pas connecté
 if (!isset($_SESSION['connexion'])) {
     ?>
@@ -33,5 +49,7 @@ if (!isset($_SESSION['connexion'])) {
 else {
     echo "<br/>";
     ?><br/><a href="index.php?page=accueil&amp;depart=deconnect" >Déconnexion</a><?php
+} }else{
+    echo "<br/>Nombre de tentative de connexion dépassé <br/> revenez dans un quart d'heure";
 }
 ?>

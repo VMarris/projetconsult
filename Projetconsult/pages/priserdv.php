@@ -34,6 +34,9 @@ if (isset($_POST['valrdv'])) {
     <div class="centrer">
         <h4 class="green">Consultation enregistrée</h4>
         <br/>
+        <?php
+        print "<META http-equiv=\"refresh\": Content=\"2;URL=index.php?page=accueil\">";
+        ?>
     </div>
     <?php
 } else {
@@ -61,6 +64,10 @@ if (isset($_POST['valrdv'])) {
                     if ($testrdv) {
                         if (date('Y-m-d', strtotime($_POST['jourrdv'])) <= date('Y-m-d')) {
                             $erreur = $erreur . "- Entrez une date postérieur à aujourd'hui";
+                            $testrdv = false;
+                        }
+                        if (date('l', strtotime($_POST['jourrdv'])) =="Sunday") {
+                            $erreur = $erreur . "- Entrez une date qui n'est pas un dimanche";
                             $testrdv = false;
                         }
                     }

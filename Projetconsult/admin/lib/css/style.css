@@ -14,7 +14,7 @@
 }
 .textnorm{
     font-size: 120%;
-    color : black;
+    color : black;  
 }
 .italic{
     font-style: italic;
@@ -80,6 +80,21 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+.tdnorm{
+    width: 130px;
+    padding-top:20px;
+}
+.td4{
+    width : 300px;
+    padding-top:20px;
+}
+.trligne{
+    border:1px solid black;
+}
+.margauto{
+    margin: auto;
+}
+
 /* les id */
 #connexion{
     text-align:right;
@@ -148,7 +163,7 @@ header {
 }
 
 body{
-    font-family: comic sans ms;
+   font-family: Comic Sans MS;
 }
 
 h4{
