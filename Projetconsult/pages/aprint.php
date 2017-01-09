@@ -1,11 +1,12 @@
 <link rel="stylesheet" type="text/css" href="../admin/lib/css/style.css"/> 
 <?php
+session_start();
 require '../lib/php/verifierCnx.php';
 include('../admin/lib/php/dbConnect.php');
 include('../admin/lib/php/classes/Vue_ConsultationDB.class.php');
 include('../admin/lib/php/classes/Vue_Consultation.class.php');
 include('../admin/lib/php/classes/Connexion.class.php');
-session_start();
+
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 $tvconsul = new Vue_ConsultationDB($cnx);
 $consultations = $tvconsul->getConsul($_SESSION['email']);

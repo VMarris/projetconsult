@@ -5,15 +5,11 @@
         <group>
             <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/gestionrdv.php</file>
             <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/moncompte.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/admin/lib/php/classes/ServiceDB.class.php</file>
+            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/aprint.php</file>
             <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/inscription.php</file>
+            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/printrendezvous.php</file>
             <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/pages/priserdv.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/admin/lib/php/classes/ConsultationDB.class.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/lib/php/connexion_site.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/admin/lib/php/classes/Consultation.class.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/lib/php/verifierCnx.php</file>
             <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/index.php</file>
-            <file>file:/C:/Users/valentin/Dropbox/consult/projetconsult/Projetconsult/admin/lib/css/style.css</file>
         </group>
     </open-files>
 </project-private>
