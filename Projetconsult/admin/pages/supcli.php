@@ -9,13 +9,11 @@ if (isset($_GET['delet'])) {
 }
 ?>
 <div class="centrer">
-    <h2 class="dblue">Suppression de Client</h2>
+    <h2 class="dblue">Suppression de Clients</h2>
 </div>
 
-
-
 <div class="div_aff_liste container textnorm">
-    Liste des Client : <br/><br/>
+    Liste des Clients : <br/><br/>
     <div class="row">
         <div class="txtGras col-lg-3 col-md-3 col-sm-3 hidden-xs">Nom</div> 
         <div class="txtGras col-lg-3 col-md-3 col-sm-3 hidden-xs">Prénom</div> 

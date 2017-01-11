@@ -21,9 +21,10 @@ if (isset($_POST['finaliser'])) {
         if ($test) {
             $tcompte = new CompteDB($cnx);
             $retour = $tcompte->exist($email1);
-            $okay = "Compte Créé";
             if ($retour == "0") {
+                $log = new CompteDB($cnx);
                 $log->creaDoc($email1, $mdp1, $nom, $prenom, $service);
+                $okay = "Compte Créé";
             } else {
                 $erreur = $erreur . "- Email déjà utilisé<br/>";
             }
@@ -41,7 +42,7 @@ $services = $tserv->getService();
     ?>
 </div>
 <br/>
-<div id="div_form_inscript" class="textnorm">
+<div  class="textnorm div_form_intro">
     Veuillez entrer les données : <br/><br/>
 
     <div class="container ">

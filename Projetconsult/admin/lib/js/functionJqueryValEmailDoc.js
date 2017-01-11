@@ -23,3 +23,29 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    
+    $("#adadm_email2").blur(function () {
+        email1 = $("#adadm_email1").val();
+        email2 = $("#adadm_email2").val();
+
+        if (($.trim(email1) != '' && $.trim(email2) != '') && (email1 == email2)) {
+            recherche = "email=" + email1;
+            
+            $.ajax({
+                type: 'POST',
+                data: recherche,
+                dataType: "json",
+                url: './lib/php/ajax/AjaxRechercheEmail.php',
+                success: function (data) {
+                    if (data[0].conte === "0") {
+                        document.getElementById("diverins3").innerHTML = "";
+                    }else{
+                        document.getElementById("diverins3").innerHTML = " - Email déjà utilisé";
+                    }
+                }
+            });
+        }
+    });
+});

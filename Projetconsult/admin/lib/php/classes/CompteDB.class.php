@@ -52,6 +52,18 @@ class CompteDB extends Compte {
             print $e->getMessage();
         }
     }
+    
+    function creaAdm($mail, $mdp) {
+        try {
+            $querry = "insert into comptes (mail,mot_de_passe,autorisation) values (:mail,md5(:mdp),3);";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(1, $mail);
+            $sql->bindValue(2, $mdp);
+            $sql->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
 
     function exist($email) {
         $retour = array();
