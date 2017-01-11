@@ -6,42 +6,46 @@ $tserv = new ServiceDB($cnx);
 $services = $tserv->getService();
 ?>
 <br/><br/>
-    <div id="gt_carousel" class="carousel slide" data-ride="carousel">
-        <!-- Carousel indicators : qui indiquent l'image affichée -->
-        <ol class="carousel-indicators">
-            <li data-target="#gt_carousel" data-slide-to="<?php print $services[0]->__get('id_service'); ?>" class="active"></li>
-            <?php
-            for ($i = 1; $i < sizeof($services); $i++) {
+<div id="gt_carousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel indicators : qui indiquent l'image affichée -->
+    <ol class="carousel-indicators">
+        <li data-target="#gt_carousel" data-slide-to="<?php print $services[0]->__get('id_service'); ?>" class="active"></li>
+        <?php
+        for ($i = 1; $i < sizeof($services); $i++) {
+            if (file_exists("./admin/images/carou/" . $services[0]->__get('nom').".jpg")) {
                 ?>
                 <li data-target="#gt_carousel" data-slide-to="<?php print $services[$i]->__get('id_service'); ?>"></li>
                 <?php
             }
-            ?>
-        </ol>   
-        <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="./admin/images/carou/<?php print $services[0]->__get('nom'); ?>.jpg" alt="Slide <?php print $services[0]->__get('nom'); ?>">
-            </div>
-            <?php
-            for ($i = 1; $i < sizeof($services); $i++) {
+        }
+        ?>
+    </ol>   
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="./admin/images/carou/<?php print $services[0]->__get('nom'); ?>.jpg" alt="Slide <?php print $services[0]->__get('nom'); ?>">
+        </div>
+        <?php
+        for ($i = 1; $i < sizeof($services); $i++) {
+            if (file_exists("./admin/images/carou/" . $services[0]->__get('nom').".jpg")) {
                 ?>
                 <div class="item">
                     <img src="./admin/images/carou/<?php print utf8_encode($services[$i]->__get('nom')); ?>.jpg" alt="Slide <?php print utf8_encode($services[$i]->__get('nom')); ?>">
                 </div>
                 <?php
             }
-            ?>
-        </div>
-        <!-- Carousel controls -->
-
-        <a class="carousel-control left" href="#gt_carousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#gt_carousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
+        }
+        ?>
     </div>
+    <!-- Carousel controls -->
+
+    <a class="carousel-control left" href="#gt_carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#gt_carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
 <br/><br/>
 <div id="div_aff_service" class="container textnorm">
 
