@@ -10,7 +10,7 @@ if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset(
         $_SESSION['connexion'] = $retour;
         $_SESSION['email'] = $_POST['email'];
         if ($retour == "3") {
-            print "<META http-equiv=\"refresh\": Content=\"1;URL=admin/index.php?page=accueil\">";
+            print "<META http-equiv=\"refresh\": Content=\"0;URL=admin/index.php?page=accueil\">";
         }
     } else {
         if (!isset($_COOKIE['connexion'])) {
@@ -21,7 +21,7 @@ if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset(
                 setcookie("connexion", "2");
             } else {
                 setcookie("connexion", "3");
-                print "<META http-equiv=\"refresh\": Content=\"1;URL=index.php?page=accueil\">";
+                print "<META http-equiv=\"refresh\": Content=\"0;URL=index.php?page=accueil\">";
             }
         }
         print '<span class="txtRouge">Identifiant incorrect</span>';
@@ -31,7 +31,7 @@ $tcook = true;
 if (!isset($_COOKIE['time'])) {
     if (isset($_COOKIE['connexion'])) {
         setcookie("connexion", "", time() - 10);
-        print "<META http-equiv=\"refresh\": Content=\"1;URL=index.php?page=accueil\">";
+        print "<META http-equiv=\"refresh\": Content=\"0;URL=index.php?page=accueil\">";
     }
 }
 if (isset($_COOKIE['connexion'])) {

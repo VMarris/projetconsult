@@ -6,7 +6,7 @@ if (isset($_GET['supprim'])) {
     if (!$bool) {
         echo '<span class="txtRouge txtGras">Ce rendez-vous ne vous appartien pas</span><br/>';
     }
-    print "<META http-equiv=\"refresh\": Content=\"2;URL=index.php?page=gestionrdv\">";
+    print "<META http-equiv=\"refresh\": Content=\"0;URL=index.php?page=gestionrdv\">";
 }
 $tvconsul = new Vue_ConsultationDB($cnx);
 $consultations = $tvconsul->getConsul($_SESSION['email']);

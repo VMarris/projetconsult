@@ -31,4 +31,27 @@ class DocteurDB {
             return null;
         }
     }
+    
+    public function getAllDocteur() {
+        try {
+            $query = "select * from docteur";
+            $resultset = $this->_db->prepare($query);           
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = new Docteur($data);
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        if(isset($_infoArray)){
+            return $_infoArray;
+        }else{
+            return null;
+        }
+    }
 }

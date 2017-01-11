@@ -19,8 +19,8 @@ if (isset($_POST['finaliser'])) {
         }
 
         if ($test) {
-            $log = new CompteDB($cnx);
-            $retour = $log->exist($email1);
+            $tcompte = new CompteDB($cnx);
+            $retour = $tcompte->exist($email1);
             $okay = "Compte Créé";
             if ($retour == "0") {
                 $log->creaDoc($email1, $mdp1, $nom, $prenom, $service);

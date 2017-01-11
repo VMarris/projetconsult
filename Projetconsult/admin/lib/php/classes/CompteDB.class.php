@@ -37,7 +37,7 @@ class CompteDB extends Compte {
             print $e->getMessage();
         }
     }
-    
+
     function creaDoc($mail, $mdp, $nom, $prenom, $service) {
         try {
             $querry = "select creadoc(:mail,md5(:mdp),:nom,:prenom,:service)";
@@ -66,12 +66,12 @@ class CompteDB extends Compte {
         }
         return $retour;
     }
-    
+
     public function getCompte($email) {
         try {
             $query = "select * from vue_client where mail=:email";
-            $resultset = $this->_db->prepare($query); 
-            $resultset->bindValue(':email', $email);            
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':email', $email);
             $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();
@@ -84,31 +84,31 @@ class CompteDB extends Compte {
                 print $e->getMessage();
             }
         }
-        if(isset($_infoArray)){
+        if (isset($_infoArray)) {
             return $_infoArray;
-        }else{
+        } else {
             return null;
         }
     }
-    
-    public function updatemdp($id_compte,$mdp){
+
+    public function updatemdp($id_compte, $mdp) {
         try {
             $query = "update comptes set mot_de_passe=md5(:mdp) where id_compte=:idcom";
-            $resultset = $this->_db->prepare($query); 
-            $resultset->bindValue(':mdp', $mdp); 
-            $resultset->bindValue(':idcom', $id_compte); 
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':mdp', $mdp);
+            $resultset->bindValue(':idcom', $id_compte);
             $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();
         }
     }
-    
-    public function updatetel($id_compte,$tel){
+
+    public function updatetel($id_compte, $tel) {
         try {
             $query = "update client set telephone=:tel where id_compte=:idcom";
-            $resultset = $this->_db->prepare($query); 
-            $resultset->bindValue(':tel', $tel); 
-            $resultset->bindValue(':idcom', $id_compte); 
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':tel', $tel);
+            $resultset->bindValue(':idcom', $id_compte);
             $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();
@@ -116,7 +116,19 @@ class CompteDB extends Compte {
     }
 
     public function __toString() {
-        return $this->_variable." ".$this->_db;
+        return $this->_variable . " " . $this->_db;
+    }
+
+    function delCompteDoc($idcompte) {
+        try {
+            $querry = "select supcomdoc(:idcompte)";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(':idcompte', $idcompte);
+            $sql->execute();
+            return true;
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
     }
 
 }
