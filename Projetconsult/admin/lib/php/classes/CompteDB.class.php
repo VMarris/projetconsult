@@ -137,6 +137,18 @@ class CompteDB extends Compte {
             print $e->getMessage();
         }
     }
+    
+    public function updatemdpadm($mail, $mdp) {
+        try {
+            $query = "update comptes set mot_de_passe=md5(:mdp) where mail=:email";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':mdp', $mdp);
+            $resultset->bindValue(':email', $mail);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
 
     public function updatetel($id_compte, $tel) {
         try {

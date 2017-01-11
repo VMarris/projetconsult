@@ -52,3 +52,25 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function () {
+    //pour pouvoir utiliser regex
+    $.validator.addMethod("regex", function (value, element, regexpr) {
+        return regexpr.test(value);
+    }, "Format non valide.");
+
+
+    $("#form_change_compteadm").validate({
+        rules: {
+            mdp1: "required",
+            mdp2: {
+                equalTo: "#mdp1__modadm"
+            },
+
+            submitHandler: function (form) {
+                form.submit();
+            }
+        }
+    });
+
+});
+
