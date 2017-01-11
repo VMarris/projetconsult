@@ -90,6 +90,29 @@ class CompteDB extends Compte {
             return null;
         }
     }
+    
+    public function getAllCompte() {
+        try {
+            $query = "select * from vue_client";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = new Compte($data);
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        if (isset($_infoArray)) {
+            return $_infoArray;
+        } else {
+            return null;
+        }
+    }
 
     public function updatemdp($id_compte, $mdp) {
         try {
@@ -122,6 +145,18 @@ class CompteDB extends Compte {
     function delCompteDoc($idcompte) {
         try {
             $querry = "select supcomdoc(:idcompte)";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(':idcompte', $idcompte);
+            $sql->execute();
+            return true;
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
+    
+    function delCompteCli($idcompte) {
+        try {
+            $querry = "select supcomCli(:idcompte)";
             $sql = $this->_db->prepare($querry);
             $sql->bindValue(':idcompte', $idcompte);
             $sql->execute();

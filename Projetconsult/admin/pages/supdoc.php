@@ -14,7 +14,7 @@ if (isset($_GET['delet'])) {
 
 
 
-<div id="div_aff_rdv" class="container textnorm">
+<div class="div_aff_liste container textnorm">
     Liste des docteurs : <br/><br/>
     <div class="row">
         <div class="txtGras col-lg-3 col-md-3 col-sm-3 hidden-xs">Nom</div> 

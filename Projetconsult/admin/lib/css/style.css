@@ -46,6 +46,11 @@
 .nonGras{
     font-weight: normal;
 }
+.div_aff_liste{
+    max-width: 850px;
+    margin: auto;
+    padding: 0px;
+}
 .footer {
     clear:both; 
     color:#333;

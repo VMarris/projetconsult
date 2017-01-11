@@ -24,7 +24,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             <header>
                 <div id="connexion" class="container">
                     <img alt="croix" src="./images/iconconex.png" class="imgauche hidden-xs"/>
-                    <br/><a href="index.php?page=accueil&amp;depart=deconnect" >Déconnexion</a>
+                    <br/><a href="../index.php?page=accueil&amp;depart=deconnect" >Déconnexion</a>
                 </div>
                 <div class="container centrer">
                     <a href="amdin/index.php?page=accueil">
@@ -35,34 +35,34 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             <div class="container">
                 <div class="row">
                     <div class="centrer">
-<?php
-if (file_exists('./lib/php/menu_adm.php')) {
-    include ('./lib/php/menu_adm.php');
-}
-?>    
+                        <?php
+                        if (file_exists('./lib/php/menu_adm.php')) {
+                            include ('./lib/php/menu_adm.php');
+                        }
+                        ?>    
                     </div>
                     <div class="col-sm-12 unpeuplace">
                         <section id="main">
-<?php
-if (!isset($_SESSION['page'])) {
-    $_SESSION['page'] = "accueil";
-}
-if (isset($_GET['page'])) {
-    $_SESSION['page'] = $_GET['page'];
-}
-if (isset($_POST['page'])) {// si on est passé la connexion
-    $_SESSION['page'] = $_POST['page'];
-}
-$path = './pages/' . $_SESSION['page'] . '.php';
-if (file_exists($path)) {
-    include ($path);
-} else {
-    ?>
+                            <?php
+                            if (!isset($_SESSION['page'])) {
+                                $_SESSION['page'] = "accueil";
+                            }
+                            if (isset($_GET['page'])) {
+                                $_SESSION['page'] = $_GET['page'];
+                            }
+                            if (isset($_POST['page'])) {// si on est passé la connexion
+                                $_SESSION['page'] = $_POST['page'];
+                            }
+                            $path = './pages/' . $_SESSION['page'] . '.php';
+                            if (file_exists($path)) {
+                                include ($path);
+                            } else {
+                                ?>
                                 <span class="txtGras txtRouge">Oups!La page demandée n'existe pas</span>
                                 <meta http-refresh: Content="1;url=index.php?page=accueil"/>
-    <?php
-}
-?>  
+                                <?php
+                            }
+                            ?>  
                         </section>
                     </div>
                 </div>
