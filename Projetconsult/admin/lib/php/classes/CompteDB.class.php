@@ -37,6 +37,21 @@ class CompteDB extends Compte {
             print $e->getMessage();
         }
     }
+    
+    function creaDoc($mail, $mdp, $nom, $prenom, $service) {
+        try {
+            $querry = "select creadoc(:mail,md5(:mdp),:nom,:prenom,:service)";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(1, $mail);
+            $sql->bindValue(2, $mdp);
+            $sql->bindValue(3, $nom);
+            $sql->bindValue(4, $prenom);
+            $sql->bindValue(5, $service);
+            $sql->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
 
     function exist($email) {
         $retour = array();
