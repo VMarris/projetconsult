@@ -58,4 +58,16 @@ class ServiceDB {
             return null;
         }
     }
+    
+    function creaServ($nom, $description) {
+        try {
+            $querry = "insert into service (nom,description) values (:nm,:descri);";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(1, $nom);
+            $sql->bindValue(2, $description);
+            $sql->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
 }

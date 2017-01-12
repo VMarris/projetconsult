@@ -35,7 +35,7 @@ if (isset($_POST['valrdv'])) {
         <h4 class="green">Consultation enregistrée</h4>
         <br/>
         <?php
-        print "<META http-equiv=\"refresh\": Content=\"2;URL=index.php?page=accueil\">";
+        print "<META http-equiv=\"refresh\": Content=\"0;URL=index.php?page=accueil\">";
         ?>
     </div>
     <?php
