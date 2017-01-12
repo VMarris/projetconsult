@@ -16,8 +16,12 @@ $tdoc = new DocteurDB($cnx);
 $docteurs = $tdoc->getDocteur($serv);
 $tserv = new ServiceDB($cnx);
 $services = $tserv->getServiceid($serv);
-if ($docteurs == null || $services == null) {
+if ($services == null) {
     echo '<span class="txtRouge txtGras">Service non reconnus</span><br/>';
+    exit();
+}
+if ($docteurs == null) {
+    echo '<span class="txtRouge txtGras">Aucun docteur</span><br/>';
     exit();
 }
 ?>

@@ -70,4 +70,16 @@ class ServiceDB {
             print $e->getMessage();
         }
     }
+    
+    function delServ($idserv) {
+        try {
+            $querry = "select supservice(:idserv)";
+            $sql = $this->_db->prepare($querry);
+            $sql->bindValue(':idserv', $idserv);
+            $sql->execute();
+            return true;
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+    }
 }
