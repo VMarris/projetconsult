@@ -1,7 +1,5 @@
 <?php
 $log = new CompteDB($cnx);
-
-
 if (isset($_POST['changercompte'])) {
     extract($_POST, EXTR_OVERWRITE);
     $test = true;
@@ -14,7 +12,7 @@ if (isset($_POST['changercompte'])) {
     }
     if ($test) {
         $okay = "";
-        $log->updatemdpadm($_SESSION['email'], $mdp1);
+        $log->updatemdpdoc($_SESSION['email'], $mdp1);
         $okay = $okay . "mot de passe modifié<br/>";
     }
 }
@@ -29,10 +27,10 @@ if (isset($_POST['changercompte'])) {
 </div>
 
 
-<div id="div_form_change_adm" class="textnorm div_form_change">
+<div id="div_form_change_doc" class="textnorm div_form_change">
 
     <div class="container ">
-        <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_change_compteadm">
+        <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_change_comptedoc">
             <div class="row">
                 <div class="col-sm-4 txtGras txtRouge"> 
                     <?php
@@ -45,23 +43,23 @@ if (isset($_POST['changercompte'])) {
             <div class="row">
                 <div class="col-sm-2"><label for="mdp1">Mot de passe</label></div>
                 <div class="col-sm-4">
-                    <input type="password" id="mdp1__modadm" name="mdp1"/>
+                    <input type="password" id="mdp1__moddoc" name="mdp1"/>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-2"><label for="mdp12">Confirmez votre mot de passe</label></div>
                 <div class="col-sm-4">
-                    <input type="password" id="mdp2__modadm" name="mdp2"/>
+                    <input type="password" id="mdp2__moddoc" name="mdp2"/>
                 </div>
             </div> 
             <br/>
             <div class="row">
                 <div class="col-sm-2 unpeuplace">
-                    <input type="reset" id="reset_modadm" value="Annuler" />
+                    <input type="reset" id="reset_moddoc" value="Annuler" />
                 </div>
                 <div class="col-sm-4 unpeuplace">
-                    <input type="submit" name="changercompte" id="changercompte_modadm" value="Modifier" />         
+                    <input type="submit" name="changercompte" id="changercompte_moddoc" value="Modifier" />         
                 </div>
             </div>
         </form>

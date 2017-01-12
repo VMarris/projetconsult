@@ -72,6 +72,12 @@
     text-align: center;
 }
 
+.div_form_change{
+    text-align: left;
+    width: 500px;
+    margin: auto;
+}
+
 .btn_menu{
     width: 200px;
     text-align: center;
