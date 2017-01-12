@@ -29,7 +29,7 @@ if ($docteurs == null || $services == null) {
 <?php
 if (isset($_POST['valrdv'])) {
     $tconsul = new ConsultationDB($cnx);
-    $tconsul->inserConsul(date('Y-m-d', strtotime($_POST['jourrdv'])), $_POST['txta_com'], $_POST['docteur'], $_POST['heure'], $_SESSION['email']);
+    $tconsul->inserConsul(date('Y-m-d', strtotime($_POST['jourrdv'])), utf8_decode($_POST['txta_com']), $_POST['docteur'], $_POST['heure'], $_SESSION['email']);
     ?>
     <div class="centrer">
         <h4 class="green">Consultation enregistrée</h4>
