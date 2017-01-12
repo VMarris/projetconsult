@@ -23,7 +23,7 @@ if (isset($_POST['finaliser'])) {
             $retour = $tcompte->exist($email1);
             if ($retour == "0") {
                 $log = new CompteDB($cnx);
-                $log->creaDoc($email1, $mdp1, $nom, $prenom, $service);
+                $log->creaDoc($email1, $mdp1, utf8_decode($nom), utf8_decode($prenom), $service);
                 $okay = "Compte Créé";
             } else {
                 $erreur = $erreur . "- Email déjà utilisé<br/>";

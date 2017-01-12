@@ -28,7 +28,7 @@ if (isset($_POST['inscrire'])) {
             $retour = $log->exist($email1);
             $okay = "Inscription effectuée";
             if ($retour == "0") {
-                $log->inscription($email1, $mdp1, $nom, $prenom, $telephone);
+                $log->inscription($email1, $mdp1, utf8_decode($nom), utf8_decode($prenom), $telephone);
             } else {
                 $erreur = $erreur . "- Email déjà utilisé<br/>";
             }
