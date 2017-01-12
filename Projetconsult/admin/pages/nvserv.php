@@ -8,6 +8,7 @@ if (isset($_POST['finaliser'])) {
     } else {
         $tserv = new ServiceDB($cnx);
         $tserv->creaServ(utf8_decode($nom),utf8_decode($description));
+        $okay = "Service Créé";
     }
 }
 ?>

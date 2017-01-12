@@ -12,7 +12,7 @@ $services = $tserv->getService();
         <li data-target="#gt_carousel" data-slide-to="<?php print $services[0]->__get('id_service'); ?>" class="active"></li>
         <?php
         for ($i = 1; $i < sizeof($services); $i++) {
-            if (file_exists("./admin/images/carou/" . $services[0]->__get('nom').".jpg")) {
+            if (file_exists("./admin/images/carou/" . $services[$i]->__get('nom').".jpg")) {
                 ?>
                 <li data-target="#gt_carousel" data-slide-to="<?php print $services[$i]->__get('id_service'); ?>"></li>
                 <?php
@@ -27,7 +27,7 @@ $services = $tserv->getService();
         </div>
         <?php
         for ($i = 1; $i < sizeof($services); $i++) {
-            if (file_exists("./admin/images/carou/" . $services[0]->__get('nom').".jpg")) {
+            if (file_exists("./admin/images/carou/" . $services[$i]->__get('nom').".jpg")) {
                 ?>
                 <div class="item">
                     <img src="./admin/images/carou/<?php print utf8_encode($services[$i]->__get('nom')); ?>.jpg" alt="Slide <?php print utf8_encode($services[$i]->__get('nom')); ?>">
