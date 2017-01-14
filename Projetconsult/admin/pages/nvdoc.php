@@ -1,4 +1,4 @@
-<?php include ('./lib/php/verifierCnx.php');?>
+<?php include ('../lib/php/verifierCnx.php');?>
 <?php
 //traitement php formulaire
 $erreur = "";
