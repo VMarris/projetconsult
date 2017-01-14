@@ -11,7 +11,7 @@
     {
         $html2pdf = new HTML2PDF('P', 'A4', 'fr');
         $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
-        $html2pdf->Output('exemple01.pdf');
+        $html2pdf->Output('rendez_vous.pdf');
     }
     catch(HTML2PDF_exception $e) {
         echo $e;

@@ -14,6 +14,7 @@ session_start();
         <script src="admin/lib/js/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript"></script>
         <script src="admin/lib/js/messagesJqueryVal.js" type="text/javascript"></script>
         <script src="admin/lib/css/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+        <script src="admin/lib/js/functionsJquery.js" type="text/javascript"></script>
         <script src="admin/lib/js/functionsJqueryVal.js" type="text/javascript"></script>
         <script src="admin/lib/js/functionJqueryValEmail.js"></script>
         <meta charset="UTF-8">

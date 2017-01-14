@@ -13,7 +13,7 @@ if (isset($_SESSION['connexion'])) {
     if ($_SESSION['connexion'] == "2") {
         ?>
         <a href="index.php?page=moncomptedoc"><button name="Comptedoc" class="btn btn_menu" >Gestion du compte</button></a>
-        <a href="index.php?page=gestionrdvdoc"><button name="GeRdvDoc" class="btn btn_menu" >Gestion des rendez-vous</button></a>
+        <a href="index.php?page=gestionrdvdoc"><button name="GeRdvDoc" class="btn btn_menu" >Liste des rendez-vous</button></a>
         <?php
     }
 }

@@ -92,3 +92,24 @@ $(document).ready(function () {
     });
 
 });
+
+$(document).ready(function () {
+    //pour pouvoir utiliser regex
+    $.validator.addMethod("regex", function (value, element, regexpr) {
+        return regexpr.test(value);
+    }, "Format non valide.");
+
+
+    $("#form_aff_rdv").validate({
+        rules: {
+            jourrdv: {
+                required: true,
+                date: true
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        }
+    });
+
+});
