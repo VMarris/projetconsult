@@ -7,6 +7,8 @@ if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset(
     $log = new CompteDB($cnx);
     $retour = $log->isAuthorized($_POST['email'], $_POST['mdp']);
     if ($retour > 0) {
+        setcookie("connexion", " ", time() + -20);
+        setcookie("time", " ", time() -20);
         $_SESSION['connexion'] = $retour;
         $_SESSION['email'] = $_POST['email'];
         if ($retour == "3") {
@@ -14,8 +16,8 @@ if (isset($_POST['envoyer']) != NULL && isset($_POST['email']) != NULL && isset(
         }
     } else {
         if (!isset($_COOKIE['connexion'])) {
-            setcookie("connexion", "1", time() + 60*15);
-            setcookie("time", time() + 60*15, time() + 60*15);
+            setcookie("connexion", "1", time() + 60 * 15);
+            setcookie("time", time() + 60 * 15, time() + 60 * 15);
         } else {
             if ($_COOKIE['connexion'] == "1") {
                 setcookie("connexion", "2");
@@ -58,7 +60,7 @@ if ($tcook) {
         <?php
     }//affichange nom et prénom
     else {
-        echo "<br/>".$_SESSION['email'];
+        echo "<br/>" . $_SESSION['email'];
         ?><br/><a href="index.php?page=accueil&amp;depart=deconnect" >Déconnexion</a><?php
     }
 } else {
