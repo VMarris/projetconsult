@@ -1,3 +1,4 @@
+<?php include ('./lib/php/verifierCnx.php');?>
 <?php
 $tdocteur = new DocteurDB($cnx);
 $docteurs = $tdocteur->getAllDocteur();

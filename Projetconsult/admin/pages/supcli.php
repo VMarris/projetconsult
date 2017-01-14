@@ -1,3 +1,4 @@
+<?php include ('./lib/php/verifierCnx.php');?>
 <?php
 $tcompte = new CompteDB($cnx);
 $clients = $tcompte->getAllCompte();

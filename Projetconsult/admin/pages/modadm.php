@@ -1,3 +1,4 @@
+<?php include ('./lib/php/verifierCnx.php');?>
 <?php
 $log = new CompteDB($cnx);
 

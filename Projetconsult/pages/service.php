@@ -64,7 +64,7 @@ $services = $tserv->getService();
             <div class="col-lg-2 col-md-2 col-sm-2">
                 <br/>
                 <?php
-                if (isset($_SESSION['connexion'])) {
+                if (isset($_SESSION['connexion']) && $_SESSION['connexion']=="1") {
                     ?>
                     <a href="index.php?page=priserdv&service_id=<?php print $services[$i]->__get('id_service'); ?>">Prendre un rendez-vous</a>
                     <?php
