@@ -1,4 +1,5 @@
 <?php
+require './lib/php/verifierCnxdoc.php';
 $log = new CompteDB($cnx);
 if (isset($_POST['changercompte'])) {
     extract($_POST, EXTR_OVERWRITE);

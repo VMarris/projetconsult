@@ -58,7 +58,7 @@ if ($tcook) {
         <?php
     }//affichange nom et prénom
     else {
-        echo "<br/>";
+        echo "<br/>".$_SESSION['email'];
         ?><br/><a href="index.php?page=accueil&amp;depart=deconnect" >Déconnexion</a><?php
     }
 } else {
