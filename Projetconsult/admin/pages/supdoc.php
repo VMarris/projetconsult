@@ -1,4 +1,15 @@
-<?php include ('../lib/php/verifierCnx.php');?>
+<?php 
+if (!isset($_SESSION['connexion'])) {
+    print "ACCES RESERVE";
+    print "<META http-equiv=\"refresh\": Content=\"2;URL=../index.php?page=accueil\">";
+    exit();
+} else {
+    if ($_SESSION['connexion'] != "3") {
+        print "ACCES RESERVE";
+        print "<META http-equiv=\"refresh\": Content=\"2;URL=../index.php?page=accueil\">";
+        exit();
+    }
+}?>
 <?php
 $tdocteur = new DocteurDB($cnx);
 $docteurs = $tdocteur->getAllDocteur();
